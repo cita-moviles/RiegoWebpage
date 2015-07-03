@@ -1,0 +1,9 @@
+@media (max-width:870px){
+    .center {
+        margin: auto;
+    } 
+    .half-view {
+        min-width: 100%;
+    }
+     
+}
