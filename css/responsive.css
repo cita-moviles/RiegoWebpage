@@ -5,5 +5,25 @@
     .half-view {
         min-width: 100%;
     }
-     
+    iframe {
+        min-width: 100%;
+        margin: 0;
+    }
+}
+@media (max-width:500px){
+    .columns {
+        min-width: 100vw;
+    }
+    #main_title {
+        font-size: 3em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    h3 {
+        font-size: 2.5em;
+    }
+    h4 {
+        font-size: 1.5em;
+    }
 }

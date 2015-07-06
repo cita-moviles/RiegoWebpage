@@ -88,9 +88,11 @@ h5 {
     text-align: center;
 }
 .button {
-    margin-top: 20%;
-    width: 100%;
     background-color: #009688;
+    min-width: 100%;
+    min-height: 10vh;
+    padding: 5px;
+    
 }
 .button:hover {
     background-color: #007466;
@@ -102,12 +104,15 @@ Navigation Bar
     width:100%;
     text-align: center;
 }
- 
+.top-bar {
+    width: 100%;
+    background-color: #009688;
+}
 .top-bar-section li.active:not(.has-form) a:not(.button) {
     background-color: #009688;
     text-align: center;
     font-size: 1em;
-    max-width: 50%;
+    width: 100%;
     float: left;
 }
 
@@ -137,6 +142,7 @@ Body
 }
 #title {
      background-image: url("../img/delicias_alpha.jpg");
+    min-height: 100vh;
 }
 .border {
     border-bottom-style: solid;
@@ -223,8 +229,19 @@ Body
     margin-left: 1vw;
     margin-right: 1vw;
 }
+/*Imple*/
+#imple{
+    min-height: 30px;
+    min-width: 40vw;
+    margin: 20px 30vw;
+}
 /*Contacto*/
-
+/*Enlaces*/
+iframe {
+    min-width: 60%;
+    margin: 0 20%;
+    min-height: 50vh;
+}
 /*FOOTER*/
 footer {
     min-width: 100%;
