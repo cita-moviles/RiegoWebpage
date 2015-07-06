@@ -33,6 +33,12 @@ img {
     margin-left: 10vw;
     margin-right: 10vw;
 }
+.anchor{
+   display:block;
+   height:4rem; /* this is the height of your header */
+   margin-top:-4rem; /* this is again negative value of the height of your header */
+   visibility:hidden;
+}
 strong {
     font-family: 'Roboto Slab', serif;
     color: #009688;
@@ -128,6 +134,12 @@ Navigation Bar
 }
 .menu {
     float: right;
+}
+#scrolldown {
+    display: block;
+    max-width: 50px;
+    margin: auto;
+    margin-top: 10vh;
 }
 /**********************************
 Body

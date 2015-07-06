@@ -36,11 +36,11 @@
             
             <!-- Right Nav Section -->
             <ul class= "right">
-                <li class="active"><a href="#titulo">Inicio</a></li>
+                <li class="active"><a href="#intro">Inicio</a></li>
                 <li class="active"><a href="#proy">Proyecto</a></li>
                 <li class="active"><a href="#equipo">Equipo</a></li>
-                <li class="active"><a href="#imple">Implementación</a></li>
-                <li class="active"><a href="#result">Resultados</a></li>
+                <li class="active"><a href="#implementa">Implementación</a></li>
+                <li class="active"><a href="#resul">Resultados</a></li>
                 <li class="active"><a href="#publi">Publicaciones</a></li>
                 <li class="active"><a href="#contacto">Contacto</a></li>
                 <li class="active"><a href="#enlaces">Enlaces</a></li>
@@ -56,8 +56,10 @@
       <div class= "title">
         <h1 id="main_title">Riego Automatizado</h1> 
         <h2>Automatización para Uso Eficiente del Agua en Sistemas de Riego Agrícola </h2>
+          <a href = "#intro"><img src = "img/scrolldown.png" id=scrolldown></a>
       </div>
     </div>
+    <span class="anchor" id="intro"></span>
     <div class= "row container">
         <div class= "center">
         <h3>Riego Automatizado</h3>
@@ -78,6 +80,7 @@
         </div>
         </div>
     </div>
+    <span class="anchor" id="proy"></span>
     <div class= "row container">
         <div class= "center">
             <h3>Proyecto</h3>
@@ -97,6 +100,7 @@
             
         </div>
     </div>
+    <span class="anchor" id="equipo"></span>
     <div class= "row container">
         <div class= "center-wider">
             <h3>Equipo</h3>
@@ -148,6 +152,7 @@
             
         </div>
     </div>
+    <span class="anchor" id="implementa"></span>
     <div class= "row container">
         <div class= "center-wider">
             <h3>Implementación</h3>
@@ -170,6 +175,7 @@
                 <a href="http://riego.chi.itesm.mx/index.html" class="button" id="imple">Visita la página de monitoreo de los campos</a>
         </div>
     </div>
+    <span class="anchor" id="publi"></span>
     <div class= "row container">
         <div class= "center">
             <h3>Publicaciones</h3>
@@ -182,6 +188,7 @@
             <p>Camilo Lozoya, Carlos Mendoza, Gilberto Mendoza and Miguel Grado, <strong>“Estrategia de control predictivo para uso eficiente del agua en sistemas de riego”,</strong> In XI Congreso Internacional Sobre Innovación y Desarrollo Tecnológico (CIINDET 2014), (Cuernavaca, México), April 2014</p>
         </div>
     </div>
+    <span class="anchor" id="resul"></span>
     <div class= "row container">
         <div class="center">
         <h3>Resultados</h3>
@@ -213,6 +220,7 @@
         </div>
     </div>
 </div>
+    <span class="anchor" id="enlaces"></span>
     <div class= "row container">
         <div class= "center">
         <h3>Enlaces</h3>
@@ -238,19 +246,24 @@
             
         </div>
     </div>
+    <span class="anchor" id="contacto"></span>
     <div class= "row container">
         <div class= "center">
             <h3>Contacto</h3>
+            <p>Dr. Camilo Lozoya</p>
+            <p class= "small-text">Profesor Investigador Escuela de Ingeniería </p>
+            <p class= "small-text light-border">Tel: 52 (614) 459-5000, ext. 3171</p>
             <form class= "row">
                 <label class= "small-6 columns">Nombre
-                    <input type="text">
+                    <input type="email" placeholder="ejemplo@mail.com" id="emailInput">
                 </label>
                 <label class= "small-6 columns">Asunto
-                    <input type="text">
+                    <input type="text" placeholder="Nombre" id="emailName">
                 </label>
                 <label class= "small-12 columns">Mensaje
-                    <textarea></textarea>
+                    <textarea placeholder="Información sobre el proyecto de riego agrícola"></textarea>
                 </label>
+                <input type="submit" id="submit" value= "Enviar" class= "small-12 columns button">
             </form>
         </div>
     </div>
@@ -262,4 +275,30 @@
   <script>
     $(document).foundation();
   </script>
+<script>
+    $('#submit').click(function(event)
+{
+    event.preventDefault();
+    var email=$("#emailInput").val();
+    var name=$("#emailName").val();
+    var message=$("#emailMessage").val();
+    $.ajax({
+        url: "/php/send_form_email.php",
+        type:'POST',
+        data:
+        {
+            email: email,
+            name:name,
+            message: message
+        },
+        success: function(msg)
+        {
+            alert('Email Sent');
+        },
+        errro:function(msg)
+        {
+            alert("Email not sent");
+        }
+    });
+});</script>
 </html>
